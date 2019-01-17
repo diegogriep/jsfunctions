@@ -12,4 +12,6 @@ const eventos = [
 
 let soma = eventos.reduce(( prevVal, elem ) =>  prevVal + elem.realizados, 0 );
 
-content.innerHTML = `Número de eventos realizados em 2018: ${ soma }`;
+let todosCircuitos = eventos.reduce(( prevVal, elem ) =>  [ ...prevVal, elem.circuito ], ['Interlagos'] ).sort().join(', ');
+
+content.innerHTML = `Eventos em ${ todosCircuitos } e o número de eventos realizados em 2018: ${ soma }`;
